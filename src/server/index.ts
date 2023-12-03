@@ -21,6 +21,4 @@ app.get(
   routeAdapter(makeListLeadsController())
 );
 
-app.listen(3001, () => {
-  console.log('server start at port 3001');
-});
+export default app;
