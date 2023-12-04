@@ -20,5 +20,10 @@ app.get(
   middlewareAdapter(makeAuthenticationMiddleware()),
   routeAdapter(makeListLeadsController())
 );
+app.get(
+  '/dreams',
+  middlewareAdapter(makeAuthenticationMiddleware()),
+  routeAdapter(makeListLeadsController())
+);
 
 export default app;

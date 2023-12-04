@@ -16,5 +16,21 @@ model Account {
   email    String @unique
   password String
 
+  dreams Dreams[]
+
   @@map("accounts")
+}
+
+model Dreams {
+  id          String   @id @default(uuid()) @db.Uuid
+  title       String
+  description String
+  password    String
+  date        DateTime
+  created_at  DateTime
+  account_id  String?  @db.Uuid
+
+  Account Account? @relation(fields: [account_id], references: [id])
+
+  @@map("dreams")
 }
