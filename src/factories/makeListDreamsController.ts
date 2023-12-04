@@ -1,4 +1,4 @@
-import { ListDreamsController } from '../application/controllers/ListDreamsController';
+import { ListDreamsController } from '../application/controllers/dreams/ListDreamsController';
 import { ListDreamsUseCase } from '../application/useCases/dreams/ListDreamsUseCase';
 
 export function makeListDreamsController() {

@@ -1,5 +1,5 @@
-import { IController, IRequest, IResponse } from '../interfaces/IController';
-import { ListDreamsUseCase } from '../useCases/dreams/ListDreamsUseCase';
+import { IController, IRequest, IResponse } from '../../interfaces/IController';
+import { ListDreamsUseCase } from '../../useCases/dreams/ListDreamsUseCase';
 
 export class ListDreamsController implements IController {
   constructor(private readonly listDreamUseCase: ListDreamsUseCase) {}
