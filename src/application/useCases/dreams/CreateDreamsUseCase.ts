@@ -1,6 +1,8 @@
 import { prismaClient } from '../../libs/prismaClient';
 
 interface IInput {
+  title: string;
+  description: string;
   account_id: string | undefined;
 }
 
@@ -9,10 +11,16 @@ interface IOutput {
 }
 
 export class CreateDreamsUseCase {
-  async execute(): Promise<IOutput> {
-    // const dreams = await prismaClient;
+  async execute({ title, description, account_id }: IInput): Promise<IOutput> {
+    const dreams = await prismaClient.dreams.create({
+      data: {
+        title,
+        description,
+        account_id,
+      },
+    });
 
-    return { dreams: 'da' };
+    return { dreams };
 
     //
   }
