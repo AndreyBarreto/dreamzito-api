@@ -25,9 +25,8 @@ model Dreams {
   id          String   @id @default(uuid()) @db.Uuid
   title       String
   description String
-  password    String
-  date        DateTime
-  created_at  DateTime
+  date        DateTime @default(now())
+  created_at  DateTime @default(now())
   account_id  String?  @db.Uuid
 
   Account Account? @relation(fields: [account_id], references: [id])

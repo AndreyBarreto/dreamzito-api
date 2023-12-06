@@ -21,7 +21,7 @@ export class AuthenticationMiddleware implements IMiddleware {
       const payload = verify(token, env.jwtSecret);
       return {
         data: {
-          accountId: payload.sub,
+          account_id: payload.sub,
         },
       };
     } catch {

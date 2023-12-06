@@ -6,7 +6,7 @@ export function routeAdapter(controller: IController) {
     const { statusCode, body } = await controller.handle({
       body: request.body,
       params: request.params,
-      accountId: request.metadata?.accountId,
+      account_id: request.metadata?.account_id,
     });
 
     response.status(statusCode).json(body);
