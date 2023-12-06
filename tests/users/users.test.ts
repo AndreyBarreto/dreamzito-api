@@ -1,7 +1,7 @@
 // import { Request } from 'supertest';
-import app from '../src/server';
+import app from '../../src/server';
 import request from 'supertest';
-import { Utils } from './utils';
+import { Utils } from '../utils';
 
 describe('Testes para a rota de cadastro de usuário', () => {
   const email = Utils.generate_random_email();
