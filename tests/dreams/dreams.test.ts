@@ -14,6 +14,8 @@ describe('Testes para a rota de cadastro de sonhos', () => {
         description: 'teste',
       });
     expect(response.status).toBe(201);
-    console.log(response.body);
+
+    expect(response.body.dreams.title).toBe('teste');
+    expect(response.body.dreams.description).toBe('teste');
   });
 });

@@ -13,6 +13,10 @@ const app = express();
 
 app.use(express.json());
 
+app.get('/', (req, res) => {
+  res.send('Home!');
+});
+
 app.post('/sign-up', routeAdapter(makeSignUpController()));
 app.post('/sign-in', routeAdapter(makeSignInController()));
 

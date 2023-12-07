@@ -1,0 +1,4 @@
+dist
+node_modules
+terraform/
+readme.md

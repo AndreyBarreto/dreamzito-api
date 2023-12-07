@@ -3,7 +3,6 @@ version: '3.9'
 services:
   postgres:
     image: postgres:latest
-    container_name: pg
     environment:
       POSTGRES_DB: dreamzito
       POSTGRES_USER: root
@@ -16,3 +15,11 @@ services:
     restart: always
     ports:
       - 8080:8080
+
+  api:
+    build: .
+    ports:
+      - 3001:3001
+    environment:
+      DATABASE_URL: postgresql://root:root@localhost:5432/dreamzito?schema=public
+      JWT_SECRET: "teste"

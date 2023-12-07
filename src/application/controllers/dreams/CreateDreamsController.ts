@@ -21,7 +21,7 @@ export class CreateDreamsController implements IController {
 
     return {
       statusCode: 201,
-      body: { response: dreams },
+      body: dreams,
     };
   }
 }
