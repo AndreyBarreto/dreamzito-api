@@ -10,13 +10,20 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Account {
-  id       String @id @default(uuid()) @db.Uuid
-  name     String
-  email    String @unique
-  password String
+enum Role {
+  ADMIN
+  USER
 
-  dreams Dreams[]
+  @@map("roles")
+}
+
+model Account {
+  id       String   @id @default(uuid()) @db.Uuid
+  name     String
+  email    String   @unique
+  password String
+  role     Role
+  dreams   Dreams[]
 
   @@map("accounts")
 }

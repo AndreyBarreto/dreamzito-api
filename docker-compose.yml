@@ -16,10 +16,10 @@ services:
     ports:
       - 8080:8080
 
-  api:
-    build: .
-    ports:
-      - 3001:3001
-    environment:
-      DATABASE_URL: postgresql://root:root@localhost:5432/dreamzito?schema=public
-      JWT_SECRET: "teste"
+  # api:
+  #   build: .
+  #   ports:
+  #     - 3001:3001
+  #   environment:
+  #     DATABASE_URL: postgresql://root:root@localhost:5432/dreamzito?schema=public
+  #     JWT_SECRET: "teste"

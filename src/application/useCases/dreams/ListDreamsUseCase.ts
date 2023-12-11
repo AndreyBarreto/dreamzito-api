@@ -1,7 +1,10 @@
 import { prismaClient } from '../../libs/prismaClient';
 
 interface IInput {
-  account_id: string | undefined;
+  account?: {
+    id: string;
+    role: string;
+  };
 }
 
 interface IOutput {
@@ -9,9 +12,9 @@ interface IOutput {
 }
 
 export class ListDreamsUseCase {
-  async execute({ account_id }: IInput): Promise<IOutput> {
+  async execute({ account }: IInput): Promise<IOutput> {
     const dreams = await prismaClient.dreams.findMany({
-      where: { account_id },
+      where: { account_id: account?.id },
     });
 
     return { dreams };
