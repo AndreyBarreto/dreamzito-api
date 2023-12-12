@@ -2,7 +2,16 @@ import { IMiddleware, IResponse, Idata } from '../interfaces/IMiddleware';
 import { IRequest } from '../interfaces/IRequest';
 
 export class AuthorizationMiddleware implements IMiddleware {
-  async handle(headers: IRequest): Promise<IResponse | Idata> {
-    throw new Error('Method not implemented.');
+  constructor(private readonly allowedRoles: string[]) {}
+  async handle({ account }: IRequest): Promise<IResponse | Idata> {
+    if (!account || !this.allowedRoles.includes(account.role)) {
+      return {
+        statusCode: 403,
+        body: {
+          error: 'Access Denied.',
+        },
+      };
+    }
+    return { data: {} };
   }
 }

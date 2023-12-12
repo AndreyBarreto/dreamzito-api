@@ -8,6 +8,7 @@ import { makeListDreamsController } from '../factories/makeListDreamsController'
 import { middlewareAdapter } from './adapters/middlewareAdapter';
 import { makeAuthenticationMiddleware } from '../factories/makeAuthenticationMiddleware';
 import { makeCreateDreamsController } from '../factories/makeCreateDreamsController';
+import { makeAuthorizationMiddleware } from '../factories/makeAuthorizationMiddleware';
 
 const app = express();
 
@@ -28,6 +29,7 @@ app.get(
 app.post(
   '/dreams',
   middlewareAdapter(makeAuthenticationMiddleware()),
+  middlewareAdapter(makeAuthorizationMiddleware(['ADMIN'])),
   routeAdapter(makeCreateDreamsController())
 );
 

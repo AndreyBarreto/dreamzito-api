@@ -6,7 +6,9 @@
   "scripts": {
     "test": "jest --testTimeout=5000 --verbose",
     "dev": "tsx watch src/index.ts",
-    "typecheck": "npx tsc --noEmit"
+    "typecheck": "npx tsc --noEmit",
+    "build": "tsc"
+
   },
   "keywords": [],
   "author": "",
