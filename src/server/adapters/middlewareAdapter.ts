@@ -9,7 +9,6 @@ export function middlewareAdapter(middleware: IMiddleware) {
       account: request.metadata?.account,
       headers: request.headers as Record<string, string>,
     });
-    console.log(request.metadata);
 
     if ('statusCode' in result) {
       return response.status(result.statusCode).json(result.body);

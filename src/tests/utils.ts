@@ -1,6 +1,6 @@
 import { randomUUID } from 'crypto';
-import app from '../src/server';
 import request from 'supertest';
+import app from '../server';
 
 export class Utils {
   static generate_random_username(): string {

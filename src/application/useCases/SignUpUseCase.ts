@@ -26,7 +26,7 @@ export class SignUpUseCase {
     const hashedPassword = await hash(password, this.salt);
 
     await prismaClient.account.create({
-      data: { email, name, role: 'USER', password: hashedPassword },
+      data: { email, name, role: 'ADMIN', password: hashedPassword },
     });
 
     //

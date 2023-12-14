@@ -7,7 +7,6 @@ export class ListDreamsController implements IController {
 
   async handle({ account }: IRequest): Promise<IResponse> {
     const dreams = await this.listDreamUseCase.execute({ account });
-    console.log(dreams);
     return {
       statusCode: 200,
       body: { response: dreams },

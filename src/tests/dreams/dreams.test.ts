@@ -1,7 +1,7 @@
 // import { Request } from 'supertest';
-import app from '../../src/server';
 import request from 'supertest';
 import { Utils } from '../utils';
+import app from '../../server';
 
 describe('Testes para a rota de cadastro de sonhos', () => {
   it('Deve cadastrar um sonho com sucesso', async () => {
